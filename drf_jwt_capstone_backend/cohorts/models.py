@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User
+
+# from drf_jwt_capstone_backend.students.models import Students
+
 
 
 
@@ -9,9 +11,6 @@ from django.contrib.auth.models import User
 class Cohort(models.Model):
     
     cohort_name = models.CharField(max_length=50, blank=True)
-    student = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    # student = models.ForeignKey(Students, on_delete=models.CASCADE)
        
     
-
-    def __str__(self):
-        return self.name
