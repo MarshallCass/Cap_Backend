@@ -11,4 +11,10 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    middle_name = models.CharField(max_length=20)
+    email = models.EmailField(max_length=50, blank=True)
+    phone_number = models.CharField(max_length=12, blank=True)
+    room_number = models.CharField(max_length=25, blank=True)
+    address = models.CharField(max_length=50, blank=True)
+    zipcode = models.CharField(max_length=5, blank=True)
+    is_teacher = models.BooleanField(default=False)
+    is_parent = models.BooleanField(default=False)
