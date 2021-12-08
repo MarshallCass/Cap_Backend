@@ -11,6 +11,6 @@ from django.db import models
 class Cohort(models.Model):
     
     cohort_name = models.CharField(max_length=50, blank=True)
-    # student = models.ForeignKey(Students, on_delete=models.CASCADE)
+    student = models.ForeignKey('students.Students', on_delete=models.CASCADE, blank=True, default= None)
        
     

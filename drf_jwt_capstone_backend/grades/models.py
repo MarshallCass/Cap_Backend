@@ -1,5 +1,5 @@
 from django.db import models
-from drf_jwt_capstone_backend.students.models import Students
+
 
 
 
@@ -7,7 +7,7 @@ from drf_jwt_capstone_backend.students.models import Students
 
 
 class Grades(models.Model):
-    student = models.ForeignKey(Students, null=True, on_delete=models.CASCADE)
-    assignment = models.ForeignKey(Students, null=True, on_delete=models.CASCADE)
+    student = models.ForeignKey('students.Students', null=True, on_delete=models.CASCADE)
+    assignment = models.ForeignKey('assignments.Assignments', null=True, on_delete=models.CASCADE)
     grade = models.CharField( blank=True, max_length=5)
     comments = models.TextField(blank=True)
