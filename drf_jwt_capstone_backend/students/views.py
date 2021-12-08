@@ -31,7 +31,7 @@ class StudentDetails(APIView):
 
     def get(self, request, pk):
         students = self.get_object(pk)
-        serializer = StudentSerial(reply)
+        serializer = StudentSerial(students)
         return Response(serializer.data)
 
     def put(self, request, pk):
