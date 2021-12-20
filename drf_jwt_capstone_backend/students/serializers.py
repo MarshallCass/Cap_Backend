@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import Students
-from drf_jwt_capstone_backend.students.models import Students
 
 
 
