@@ -9,7 +9,7 @@ from .serializers import StudentSerial
 
 class StudentList(APIView):
 
-    def get(self, reqest):
+    def get(self, request):
         students = Students.objects.all()
         serializer = StudentSerial(students, many=True)
         return Response(serializer.data)
