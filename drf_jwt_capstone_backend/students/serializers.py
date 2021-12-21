@@ -8,7 +8,7 @@ class StudentSerial(serializers.ModelSerializer):
         model = Students
 
         fields = ('first_name', 'last_name', 'address', 'zipcode', 
-                  ' guardian_one', 'guardian_two')
+                  'guardian_one', 'guardian_two')
 
 def create(self, validated_data):
 

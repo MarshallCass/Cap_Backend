@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('first_name', models.CharField(blank=True, max_length=50)),
                 ('last_name', models.CharField(blank=True, max_length=50)),
                 ('address', models.CharField(blank=True, max_length=50)),
-                ('zip_code', models.CharField(blank=True, max_length=5)),
+                ('zipcode', models.CharField(blank=True, max_length=5)),
                 ('guardian_one', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='guardian_one', to=settings.AUTH_USER_MODEL)),
                 ('guardian_two', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='guardian_two', to=settings.AUTH_USER_MODEL)),
             ],

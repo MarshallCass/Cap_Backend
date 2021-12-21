@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import CohortList, CohortDetails
 
 urlpatterns = [
-    path('cohort/', views.CohortList.as_view),
-    path('cohort/<int:pk>/', views.CohortDetails.as_view)
+    path('cohort/', CohortList.as_view),
+    path('cohort/<int:pk>/', CohortDetails.as_view)
 ]

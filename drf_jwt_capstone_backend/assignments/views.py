@@ -31,7 +31,7 @@ class ProjectDetails(APIView):
 
     def get(self, request, pk):
         assignment = self.get_object(pk)
-        serializer = AssignmentsSerial(reply)
+        serializer = AssignmentsSerial(assignment)
         return Response(serializer.data)
 
     def put(self, request, pk):
