@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from .models import Cohort
+from .models import Cohorts
 from .serializers import CohortSerial
 
 # Create your views here.
@@ -10,8 +10,8 @@ from .serializers import CohortSerial
 class CohortList(APIView):
 
     def get(self, reqest):
-        cohort = Cohort.objects.all()
-        serializer = CohortSerial(cohort, many=True)
+        cohorts = Cohorts.objects.all()
+        serializer = CohortSerial(cohorts, many=True)
         return Response(serializer.data)
 
     def post(self, request):
@@ -25,8 +25,8 @@ class CohortDetails(APIView):
     
     def get_object(self, pk):
         try:
-            return Cohort.objects.get(pk=pk)
-        except Cohort.DoesNotExist:
+            return Cohorts.objects.get(pk=pk)
+        except Cohorts.DoesNotExist:
             raise status.HTTP_404_NOT_FOUND
 
     def get(self, request, pk):

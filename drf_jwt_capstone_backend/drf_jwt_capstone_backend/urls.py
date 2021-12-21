@@ -21,6 +21,6 @@ urlpatterns = [
     path('api/auth/', include('authentication.urls')),
     path('students/', include('students.urls')),
     path('cohorts/', include('cohorts.urls')),
-    path('assignemnts/', include('assignments.urls')),
+    path('assignments/', include('assignments.urls')),
     path('grades/', include('grades.urls')),
 ]

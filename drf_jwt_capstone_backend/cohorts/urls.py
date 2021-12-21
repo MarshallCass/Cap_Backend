@@ -2,6 +2,6 @@ from django.urls import path
 from .views import CohortList, CohortDetails
 
 urlpatterns = [
-    path('cohort/', CohortList.as_view),
-    path('cohort/<int:pk>/', CohortDetails.as_view)
+    path('cohorts/', CohortList.as_view(), name='all_cohorts'),
+    path('cohorts/<int:pk>/', CohortDetails.as_view(), name='single_cohort')
 ]

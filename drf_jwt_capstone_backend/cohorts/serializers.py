@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import Cohort
+from .models import Cohorts
 
 
 class CohortSerial(serializers.ModelSerializer):
     class Meta:
-        model = Cohort
+        model = Cohorts
 
-        fields = ('cohort','student')
+        fields = ('cohort_name','student')
