@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
+# from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -42,4 +43,20 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
         return user
 
-    
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 
+                 'username',
+                 'password',
+                 'email', 
+                 'first_name', 
+                 'last_name', 
+                 'address',
+                 'zipcode',
+                 'is_superuser',
+                 'is_staff',
+                 'is_parent',
+                 'is_teacher',
+                 'phone_number',
+                 'room_number')

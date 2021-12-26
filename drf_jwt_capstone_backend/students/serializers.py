@@ -8,7 +8,7 @@ class StudentSerial(serializers.ModelSerializer):
         model = Students
 
         fields = ('first_name', 'last_name', 'address', 'zipcode', 
-                  'guardian_one', 'guardian_two')
+                  'guardian_one', 'guardian_two', 'account_balance')
 
 def create(self, validated_data):
 
@@ -19,6 +19,7 @@ def create(self, validated_data):
             zipcode=validated_data['zipcode'],
             guardian_one=validated_data['guardian_one'],
             guardian_two=validated_data['guardian_two'],
+            account_balance=validated_data['account_balance'],
             # If added new columns through the User model, add them in this
             # create method call in the format as seen above
         )

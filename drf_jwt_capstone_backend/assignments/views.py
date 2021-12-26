@@ -9,7 +9,7 @@ from .serializers import AssignmentsSerial
 
 class AssignmentList(APIView):
 
-    def get(self, reqest):
+    def get(self, request):
         assignments = Assignments.objects.all()
         serializer = AssignmentsSerial(assignments, many=True)
         return Response(serializer.data)

@@ -1,7 +1,8 @@
 from django.contrib.auth import get_user_model
-from .serializers import RegistrationSerializer
+from .serializers import RegistrationSerializer, UserSerializer
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
+# from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
 from rest_framework.views import APIView
@@ -21,6 +22,7 @@ class UserListView(LoginRequiredMixin, ListView):
 
 
 class UserDetails(APIView):
+    # permission_classes = [IsAuthenticated]
     
     def get_object(self, pk):
         try:

@@ -9,7 +9,7 @@ from .serializers import CohortSerial
 
 class CohortList(APIView):
 
-    def get(self, reqest):
+    def get(self, request):
         cohorts = Cohorts.objects.all()
         serializer = CohortSerial(cohorts, many=True)
         return Response(serializer.data)

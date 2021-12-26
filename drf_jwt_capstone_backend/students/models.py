@@ -15,3 +15,4 @@ class Students(models.Model):
     zipcode = models.CharField(max_length=5, blank=True)
     guardian_one = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='guardian_one')
     guardian_two = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='guardian_two')
+    account_balance = models.DecimalField(max_digits=3, decimal_places=2, blank=True)
