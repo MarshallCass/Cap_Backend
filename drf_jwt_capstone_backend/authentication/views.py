@@ -32,12 +32,12 @@ class UserDetails(APIView):
 
     def get(self, request, pk):
         user = self.get_object(pk)
-        serializer = RegistrationSerializer(user)
+        serializer = UserSerializer(user)
         return Response(serializer.data)
 
     def put(self, request, pk):
         update_user = self.get_object(pk)
-        serializer = RegistrationSerializer(update_user, data=request.data)
+        serializer = UserSerializer(update_user, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
